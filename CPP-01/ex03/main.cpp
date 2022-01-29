@@ -19,5 +19,12 @@ int main()
 		club.setType("some other type of club");
 		jim.attack();
 	}
+	{
+		Weapon sword = Weapon("Sword");
+		HumanB nab("Nab");
+		nab.attack();
+		nab.setWeapon(sword);
+		nab.attack();
+	}
 	return 0;
 }
