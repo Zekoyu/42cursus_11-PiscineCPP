@@ -1,6 +1,6 @@
 SRCS = Karen.cpp main.cpp
 
-NAME = karen
+NAME = karenFilter
 
 OBJS = $(SRCS:.cpp=.o)
 
