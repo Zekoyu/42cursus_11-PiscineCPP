@@ -5,7 +5,8 @@ HumanA::HumanA(const std::string &name, Weapon &weapon) : _name(name), _weapon(w
 
 HumanA::~HumanA() { std::cout << "HumanA (" << this->_name << ") destructor called" << std::endl; }
 
-HumanA::HumanA(const HumanA &h) : _name(h.getName()), _weapon(h._weapon) { std::cout << "HumanA copy constructor called" << std::endl; }
+HumanA::HumanA(const HumanA &h) : _name(h.getName()), _weapon(h._weapon)
+{ std::cout << "HumanA copy constructor called" << std::endl; }
 
 HumanA	&HumanA::operator= (const HumanA &h)
 {
