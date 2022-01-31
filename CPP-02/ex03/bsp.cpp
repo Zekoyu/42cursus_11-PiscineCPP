@@ -6,7 +6,7 @@
 /*   By:             )/   )   )  /  /    (  |   )/   )   ) /   )(   )(    )   */
 /*                  '/   /   (`.'  /      `-'-''/   /   (.'`--'`-`-'  `--':   */
 /*   Created: 31-01-2022  by  `-'                        `-'                  */
-/*   Updated: 31-01-2022 16:10 by                                             */
+/*   Updated: 31-01-2022 20:56 by                                             */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,6 +15,9 @@
 /*
 	Returns which side 'point' is compared to the segment 'ab' (depending on sign)
 	See https://math.stackexchange.com/questions/274712/calculate-on-which-side-of-a-straight-line-is-a-given-point-located
+	http://www.ambrsoft.com/TrigoCalc/PointsInOut/PointInOut_.htm
+
+	This is the cross product of our segment AB and AP, BC and BP etc.
 */
 static float	getSide(Point const point, Point const a, Point const b)
 {
