@@ -6,7 +6,7 @@
 /*   By:             )/   )   )  /  /    (  |   )/   )   ) /   )(   )(    )   */
 /*                  '/   /   (`.'  /      `-'-''/   /   (.'`--'`-`-'  `--':   */
 /*   Created: 30-01-2022  by  `-'                        `-'                  */
-/*   Updated: 31-01-2022 13:04 by                                             */
+/*   Updated: 31-01-2022 14:16 by                                             */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -42,17 +42,29 @@ Fixed::Fixed(Fixed const &f) : _value(f.getRawBits())
 
 Fixed::~Fixed() { std::cout << "Fixed destructor called" << std::endl; }
 
-int		Fixed::getRawBits(void) const 
-{ 
-	std::cout << "getRawBits member function called" << std::endl;
-	return (this->_value);
-}
+int		Fixed::getRawBits(void) const { return (this->_value); }
 
 void	Fixed::setRawBits(int const raw) { this->_value = raw; }
 
 float	Fixed::toFloat(void) const { return ((float) this->_value / (float) (1 << _fractionalBits)); }
 
 int		Fixed::toInt(void) const { return (this->_value >> _fractionalBits); }
+
+// Can't use ternary because is expects expressions, not statements (return is a statement)
+// Need to return const because arg is const
+Fixed const	&Fixed::max(Fixed const &lhs, Fixed const &rhs)
+{
+	if(lhs > rhs)
+		return (lhs);
+	return (rhs);
+}
+
+Fixed const	&Fixed::min(Fixed const &lhs, Fixed const &rhs)
+{
+	if(lhs < rhs)
+		return (lhs);
+	return (rhs);
+}
 
 Fixed	&Fixed::operator=(Fixed const &f)
 {
@@ -64,4 +76,74 @@ std::ostream	&operator<<(std::ostream &os, Fixed const &f)
 {
 	os << f.toFloat();
 	return (os);
+}
+
+// Since our number is basically stored as a int and we just shift it to get the "real" value, we can perform comparisons on int directly
+bool	Fixed::operator<(Fixed const &f) const { return (this->getRawBits() < f.getRawBits()); }
+
+bool	Fixed::operator<=(Fixed const &f) const { return (this->getRawBits() <= f.getRawBits()); }
+
+bool	Fixed::operator>(Fixed const &f) const { return (this->getRawBits() > f.getRawBits());; }
+
+bool	Fixed::operator>=(Fixed const &f) const { return (this->getRawBits() >= f.getRawBits());; }
+
+bool	Fixed::operator==(Fixed const &f) const { return (this->getRawBits() == f.getRawBits()); }
+
+bool	Fixed::operator!=(Fixed const &f) const { return (this->getRawBits() != f.getRawBits()); }
+
+//Temporary objects are destroyed as the last step in evaluating the full-expression (1.9) that (lexically) contains the point where they were created
+// So temporary created here will not be immediately destroyed
+// Cannot return a reference since res is allocated in stack
+Fixed	Fixed::operator+(Fixed const &f) const 
+{
+	Fixed	res(this->toFloat() + f.toFloat());
+	return (res);
+}
+
+Fixed	Fixed::operator-(Fixed const &f) const 
+{
+	Fixed	res(this->toFloat() - f.toFloat());
+	return (res);
+}
+
+Fixed	Fixed::operator/(Fixed const &f) const
+{
+	Fixed	res(this->toFloat() / f.toFloat());
+	return (res);
+}
+
+Fixed	Fixed::operator*(Fixed const &f) const
+{
+	Fixed	res(this->toFloat() * f.toFloat());
+	return (res);
+}
+
+// prefix ++ return the new one
+// Increment of the smallest value possible, so just increment the int and it will do it automatically
+
+Fixed	Fixed::operator++()
+{
+	this->setRawBits(this->getRawBits() + 1);
+	return (Fixed(this->toFloat()));
+}
+
+// postfix ++ returns the old value
+Fixed	Fixed::operator++(int)
+{
+	Fixed	save(this->toFloat());
+	this->setRawBits(this->getRawBits() + 1);
+	return (save);
+}
+
+Fixed	Fixed::operator--()
+{
+	this->setRawBits(this->getRawBits() - 1);
+	return (Fixed(this->toFloat()));
+}
+
+Fixed	Fixed::operator--(int)
+{
+	Fixed	save(this->toFloat());
+	this->setRawBits(this->getRawBits() - 1);
+	return (save);
 }
