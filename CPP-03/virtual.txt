@@ -1,0 +1,3 @@
+https://stackoverflow.com/questions/2391679/why-do-we-need-virtual-functions-in-c
+
+reponse 1 et 2 noice
