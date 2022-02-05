@@ -5,36 +5,24 @@
 /*                  .  .-. .-.   -/--).--..-.  .  .-. .-.   /-.  .-._.)  (    */
 /*   By:             )/   )   )  /  /    (  |   )/   )   ) /   )(   )(    )   */
 /*                  '/   /   (`.'  /      `-'-''/   /   (.'`--'`-`-'  `--':   */
-/*   Created: 04-02-2022  by  `-'                        `-'                  */
-/*   Updated: 04-02-2022 22:07 by                                             */
+/*   Created: 05-02-2022  by  `-'                        `-'                  */
+/*   Updated: 05-02-2022 16:25 by                                             */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef ICHARACTER_HPP
-# define ICHARACTER_HPP
+#ifndef IMATERIASOURCE_HPP
+# define IMATERIASOURCE_HPP
 
 #include <iostream>
 
 #include "AMateria.hpp"
 
-class ICharacter
+class IMateriaSource
 {
-	private:
-		
 	public:
-		ICharacter();
-		ICharacter(ICharacter const &i);
-		virtual ~ICharacter();
-
-		ICharacter	&operator=(ICharacter const &i);
-
-		virtual std::string const	&getName(void) const = 0;
-		virtual void				equip(AMateria *m) = 0;
-		virtual void				unequip(int idx) = 0;
-		virtual void				use(int idx, ICharacter &target) = 0;
-
+		virtual ~IMateriaSource() {}
+		virtual void 		learnMateria(AMateria*) = 0;
+		virtual AMateria*	createMateria(std::string const & type) = 0;
 };
-
-std::ostream	&operator<<(std::ostream &os, ICharacter const &i);
 
 #endif

@@ -5,39 +5,33 @@
 /*                  .  .-. .-.   -/--).--..-.  .  .-. .-.   /-.  .-._.)  (    */
 /*   By:             )/   )   )  /  /    (  |   )/   )   ) /   )(   )(    )   */
 /*                  '/   /   (`.'  /      `-'-''/   /   (.'`--'`-`-'  `--':   */
-/*   Created: 04-02-2022  by  `-'                        `-'                  */
-/*   Updated: 04-02-2022 22:05 by                                             */
+/*   Created: 05-02-2022  by  `-'                        `-'                  */
+/*   Updated: 05-02-2022 00:26 by                                             */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef AMATERIA_HPP
-# define AMATERIA_HPP
+#ifndef CURE_HPP
+# define CURE_HPP
 
 #include <iostream>
 
-#include "ICharacter.hpp"
+#include "AMateria.hpp"
 
-class AMateria
+class Cure : public AMateria
 {
 	private:
 		
-	protected:
-		
 	public:
-		AMateria();
-		AMateria(std::string const &type);
-		AMateria(AMateria const &a);
-		~AMateria();
+		Cure();
+		Cure(Cure const &i);
+		~Cure();
 
-		AMateria	&operator=(AMateria const &a);
+		Cure	&operator=(Cure const &i);
 
-		// Returning const value can prevent from like "getType() = "pouet""
-		std::string const	&getType;
-		virtual AMateria*	clone(void) const = 0;
-		virtual void		use(ICharacter &target);
-
+		void	use(ICharacter &target);
+		Cure		*clone(void) const;
 };
 
-std::ostream	&operator<<(std::ostream &os, AMateria const &a);
+std::ostream	&operator<<(std::ostream &os, Cure const &i);
 
 #endif
