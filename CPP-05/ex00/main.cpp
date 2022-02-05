@@ -6,7 +6,7 @@
 /*   By:             )/   )   )  /  /    (  |   )/   )   ) /   )(   )(    )   */
 /*                  '/   /   (`.'  /      `-'-''/   /   (.'`--'`-`-'  `--':   */
 /*   Created: 05-02-2022  by  `-'                        `-'                  */
-/*   Updated: 05-02-2022 21:11 by                                             */
+/*   Updated: 05-02-2022 21:49 by                                             */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,8 +14,18 @@
 
 int main()
 {
+	/*
+		Catch by reference for derived class of 'to catch' type
+		https://stackoverflow.com/questions/2522299/c-catch-blocks-catch-exception-by-value-or-reference
+
+		If you expect an exception and throw a GradeTooHighException, it will be converted to an exception, and print
+		the message of Exception instead of GradeTooHighException
+	*/
 	try
-		{ Bureaucrat rondaz("Nab", 10); std::cout << rondaz << std::endl;} // should work
+	{
+		Bureaucrat rondaz("Nab", 10); // should work
+		std::cout << rondaz << std::endl;
+	} 
 	catch(const std::exception& e)
 		{ std::cerr << e.what() << std::endl; }
 
