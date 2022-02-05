@@ -6,7 +6,7 @@
 /*   By:             )/   )   )  /  /    (  |   )/   )   ) /   )(   )(    )   */
 /*                  '/   /   (`.'  /      `-'-''/   /   (.'`--'`-`-'  `--':   */
 /*   Created: 05-02-2022  by  `-'                        `-'                  */
-/*   Updated: 05-02-2022 16:20 by                                             */
+/*   Updated: 05-02-2022 21:12 by                                             */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -66,7 +66,7 @@ Character	&Character::operator=(Character const &c)
 std::ostream	&operator<<(std::ostream &os, Character const &c)
 
 {
-	std::cout << "Character " << c.getName() << std::endl;
+	os << "Character " << c.getName();
 	return (os);
 }
 

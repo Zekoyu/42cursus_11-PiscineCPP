@@ -6,7 +6,7 @@
 /*   By:             )/   )   )  /  /    (  |   )/   )   ) /   )(   )(    )   */
 /*                  '/   /   (`.'  /      `-'-''/   /   (.'`--'`-`-'  `--':   */
 /*   Created: 04-02-2022  by  `-'                        `-'                  */
-/*   Updated: 04-02-2022 19:13 by                                             */
+/*   Updated: 05-02-2022 21:12 by                                             */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -29,7 +29,7 @@ WrongCat	&WrongCat::operator=(WrongCat const &d)
 std::ostream	&operator<<(std::ostream &os, WrongCat const &d)
 
 {
-	std::cout << "I am a wrong cat and my type is " << d.getType() << std::endl;
+	std::cout << "I am a wrong cat and my type is " << d.getType();
 	return (os);
 }
 

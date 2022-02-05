@@ -6,7 +6,7 @@
 /*   By:             )/   )   )  /  /    (  |   )/   )   ) /   )(   )(    )   */
 /*                  '/   /   (`.'  /      `-'-''/   /   (.'`--'`-`-'  `--':   */
 /*   Created: 04-02-2022  by  `-'                        `-'                  */
-/*   Updated: 04-02-2022 19:07 by                                             */
+/*   Updated: 05-02-2022 21:12 by                                             */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -34,7 +34,7 @@ WrongAnimal	&WrongAnimal::operator=(WrongAnimal const &a)
 std::ostream	&operator<<(std::ostream &os, WrongAnimal const &a)
 
 {
-	std::cout << "I am a wrong animal and my type is " << a.getType() << std::endl;
+	os << "I am a wrong animal and my type is " << a.getType();
 	return (os);
 }
 

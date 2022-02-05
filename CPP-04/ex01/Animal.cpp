@@ -6,7 +6,7 @@
 /*   By:             )/   )   )  /  /    (  |   )/   )   ) /   )(   )(    )   */
 /*                  '/   /   (`.'  /      `-'-''/   /   (.'`--'`-`-'  `--':   */
 /*   Created: 04-02-2022  by  `-'                        `-'                  */
-/*   Updated: 05-02-2022 00:15 by                                             */
+/*   Updated: 05-02-2022 21:12 by                                             */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -34,7 +34,7 @@ Animal	&Animal::operator=(Animal const &a)
 std::ostream	&operator<<(std::ostream &os, Animal const &a)
 
 {
-	std::cout << "I am an animal and my type is " << a.getType() << std::endl;
+	os << "I am an animal and my type is " << a.getType();
 	return (os);
 }
 

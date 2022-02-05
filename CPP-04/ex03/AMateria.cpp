@@ -6,7 +6,7 @@
 /*   By:             )/   )   )  /  /    (  |   )/   )   ) /   )(   )(    )   */
 /*                  '/   /   (`.'  /      `-'-''/   /   (.'`--'`-`-'  `--':   */
 /*   Created: 05-02-2022  by  `-'                        `-'                  */
-/*   Updated: 05-02-2022 16:18 by                                             */
+/*   Updated: 05-02-2022 21:12 by                                             */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -35,7 +35,7 @@ AMateria	&AMateria::operator=(AMateria const &a)
 
 std::ostream	&operator<<(std::ostream &os, AMateria const &a)
 {
-	std::cout << "AMateria of type " << a.getType() << std::endl;
+	os << "AMateria of type " << a.getType();
 	return (os);
 }
 

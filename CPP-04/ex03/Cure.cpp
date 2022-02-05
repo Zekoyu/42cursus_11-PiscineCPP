@@ -6,7 +6,7 @@
 /*   By:             )/   )   )  /  /    (  |   )/   )   ) /   )(   )(    )   */
 /*                  '/   /   (`.'  /      `-'-''/   /   (.'`--'`-`-'  `--':   */
 /*   Created: 05-02-2022  by  `-'                        `-'                  */
-/*   Updated: 05-02-2022 16:24 by                                             */
+/*   Updated: 05-02-2022 21:12 by                                             */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -33,7 +33,7 @@ Cure	&Cure::operator=(Cure const &i)
 std::ostream	&operator<<(std::ostream &os, Cure const &i)
 
 {
-	std::cout << "Cure materia of type " << i.getType() << std::endl;
+	os << "Cure materia of type " << i.getType();
 	return (os);
 }
 

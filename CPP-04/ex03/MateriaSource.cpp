@@ -6,7 +6,7 @@
 /*   By:             )/   )   )  /  /    (  |   )/   )   ) /   )(   )(    )   */
 /*                  '/   /   (`.'  /      `-'-''/   /   (.'`--'`-`-'  `--':   */
 /*   Created: 05-02-2022  by  `-'                        `-'                  */
-/*   Updated: 05-02-2022 15:48 by                                             */
+/*   Updated: 05-02-2022 21:12 by                                             */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -55,7 +55,7 @@ MateriaSource	&MateriaSource::operator=(MateriaSource const &m)
 std::ostream	&operator<<(std::ostream &os, MateriaSource const &m)
 
 {
-	std::cout << "MateriaSource with " << m.getKnownMateriasCount() << " known materias" << std::endl;
+	os << "MateriaSource with " << m.getKnownMateriasCount() << " known materias";
 	return (os);
 }
 
