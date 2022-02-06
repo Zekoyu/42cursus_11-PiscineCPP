@@ -6,7 +6,7 @@
 /*   By:             )/   )   )  /  /    (  |   )/   )   ) /   )(   )(    )   */
 /*                  '/   /   (`.'  /      `-'-''/   /   (.'`--'`-`-'  `--':   */
 /*   Created: 05-02-2022  by  `-'                        `-'                  */
-/*   Updated: 06-02-2022 12:18 by                                             */
+/*   Updated: 06-02-2022 16:19 by                                             */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -62,6 +62,17 @@ void				Form::beSigned(Bureaucrat const &bureaucrat)
 	this->_isSigned = true;
 }
 
+bool				Form::canBeExecuted(Bureaucrat const &executor) const
+{
+	if (executor.getGrade() > this->getGradeToExecute())
+		throw (GradeTooLowException());
+	if (!this->isSigned())
+		throw (FormNotSignedException());
+	return (true);
+}
+
 char const	*Form::GradeTooHighException::what(void) const throw() { return ("Error: Form grade too high (< 1)"); }
 
-char const	*Form::GradeTooLowException::what(void) const throw() { return ("Error: Form grade too low (> 150)"); }
+char const	*Form::GradeTooLowException::what(void) const throw() { return ("Grade too low"); }
+
+char const	*Form::FormNotSignedException::what(void) const throw() { return ("Form not signed"); }

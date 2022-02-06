@@ -6,7 +6,7 @@
 /*   By:             )/   )   )  /  /    (  |   )/   )   ) /   )(   )(    )   */
 /*                  '/   /   (`.'  /      `-'-''/   /   (.'`--'`-`-'  `--':   */
 /*   Created: 05-02-2022  by  `-'                        `-'                  */
-/*   Updated: 06-02-2022 12:18 by                                             */
+/*   Updated: 06-02-2022 16:08 by                                             */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,15 +26,18 @@ class Form
 		bool				_isSigned;
 		int const			_gradeToSign;
 		int const			_gradeToExecute;
-	public:
+	protected:
 		Form();
+		bool			canBeExecuted(Bureaucrat const &executor) const;
+	public:
 		Form(Form const &f);
 		Form(std::string const &name, int const gradeToSign, int const gradeToExecute);
-		~Form();
+		virtual ~Form();
 
 		Form	&operator=(Form const &f);
 
-		void	beSigned(Bureaucrat const &bureaucrat);
+		void			beSigned(Bureaucrat const &bureaucrat);
+		virtual void	execute(Bureaucrat const &executor) const = 0; // https://stackoverflow.com/questions/2089083/pure-virtual-function-with-implementation, execute can be implemented directly in Form
 
 		class GradeTooHighException : public std::exception
 		{
@@ -43,6 +46,12 @@ class Form
 		};
 
 		class GradeTooLowException : public std::exception
+		{
+			public:
+				virtual char const *what(void) const throw();
+		};
+
+		class FormNotSignedException : public std::exception
 		{
 			public:
 				virtual char const *what(void) const throw();
