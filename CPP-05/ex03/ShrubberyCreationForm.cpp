@@ -6,7 +6,7 @@
 /*   By:             )/   )   )  /  /    (  |   )/   )   ) /   )(   )(    )   */
 /*                  '/   /   (`.'  /      `-'-''/   /   (.'`--'`-`-'  `--':   */
 /*   Created: 06-02-2022  by  `-'                        `-'                  */
-/*   Updated: 06-02-2022 15:57 by                                             */
+/*   Updated: 06-02-2022 18:13 by                                             */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,13 +15,13 @@
 #include <iostream>
 #include <fstream>
 
-ShrubberyCreationForm::ShrubberyCreationForm() : Form("shruberry_creation", 145, 137), _target("unknown")
+ShrubberyCreationForm::ShrubberyCreationForm() : Form("shrubbery_creation", 145, 137), _target("unknown")
 { std::cout << "ShrubberyCreationForm default constructor called" << std::endl; }
 
 ShrubberyCreationForm::ShrubberyCreationForm(ShrubberyCreationForm const &s) : Form(s), _target(s.getTarget())
 { std::cout << "ShrubberyCreationForm copy constructor called" << std::endl; }
 
-ShrubberyCreationForm::ShrubberyCreationForm(std::string const &target) : Form("shruberry_creation", 145, 137), _target(target)
+ShrubberyCreationForm::ShrubberyCreationForm(std::string const &target) : Form("shrubbery_creation", 145, 137), _target(target)
 { std::cout << "ShrubberyCreationForm string parameter constructor called" << std::endl; }
 
 ShrubberyCreationForm::~ShrubberyCreationForm() { std::cout << "ShrubberyCreationForm destructor called" << std::endl; }
