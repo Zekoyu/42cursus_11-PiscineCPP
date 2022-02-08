@@ -11,4 +11,16 @@ we don't know if it's B or C, we can use dynamic_cast<A>(var) to convert automat
 
 C-style cast try all 4 casts until one work, should be avoided in C++
 
+
+Conversion order in C++
+
+
+				long double
+				 double
+		|	     float
+  Data	|	     long
+  Loss	|        int
+		V	    short
+			     char
+
 https://www.linkedin.com/pulse/c-typecasting-from-developers-point-view-vishal-chovatiya
