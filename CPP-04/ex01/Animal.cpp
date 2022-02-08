@@ -6,7 +6,7 @@
 /*   By:             )/   )   )  /  /    (  |   )/   )   ) /   )(   )(    )   */
 /*                  '/   /   (`.'  /      `-'-''/   /   (.'`--'`-`-'  `--':   */
 /*   Created: 04-02-2022  by  `-'                        `-'                  */
-/*   Updated: 05-02-2022 21:12 by                                             */
+/*   Updated: 07-02-2022 14:53 by                                             */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,7 +27,7 @@ Animal::~Animal() { std::cout << "Animal destructor called" << std::endl; }
 
 Animal	&Animal::operator=(Animal const &a)
 {
-	//this->_type = a.getType();
+	this->_type = a.getType();
 	return (*this);
 }
 

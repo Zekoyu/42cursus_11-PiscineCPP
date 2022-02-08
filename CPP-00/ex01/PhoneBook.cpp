@@ -82,8 +82,8 @@ void		PhoneBook::displayFullContact(int index) const
 	{
 		Contact c = this->_contacts[index - 1];
 	
-		std::cout << c.getFirstName() << " " << c.getLastName() << " (aka. " << c.getNickname() << ")" << std::endl;
+		std::cout << std::endl << c.getFirstName() << " " << c.getLastName() << " (aka. " << c.getNickname() << ")" << std::endl;
 		std::cout << "Phone:          " << c.getPhoneNumber() << std::endl;
-		std::cout << "Darkest secret: " << c.getDarkestSecret() << std::endl;
+		std::cout << "Darkest secret: " << c.getDarkestSecret() << std::endl << std::endl;
 	}
 }

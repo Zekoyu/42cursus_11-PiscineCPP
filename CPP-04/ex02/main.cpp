@@ -6,7 +6,7 @@
 /*   By:             )/   )   )  /  /    (  |   )/   )   ) /   )(   )(    )   */
 /*                  '/   /   (`.'  /      `-'-''/   /   (.'`--'`-`-'  `--':   */
 /*   Created: 04-02-2022  by  `-'                        `-'                  */
-/*   Updated: 04-02-2022 21:49 by                                             */
+/*   Updated: 07-02-2022 14:58 by                                             */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,9 +15,9 @@
 
 int main()
 {
-	//const Animal meta = Animal(); // Impossible with abstract class, does not compile
-	Animal* j = new Dog();
-	//Animal i = Cat(); // Cannot do this
+	//const AAnimal meta = AAnimal(); // Impossible with abstract class, does not compile
+	AAnimal* j = new Dog();
+	//AAnimal i = Cat(); // Cannot do this
 	Cat i;
 
 	//i = Cat(); Can't do that anymore

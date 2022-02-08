@@ -6,7 +6,7 @@
 /*   By:             )/   )   )  /  /    (  |   )/   )   ) /   )(   )(    )   */
 /*                  '/   /   (`.'  /      `-'-''/   /   (.'`--'`-`-'  `--':   */
 /*   Created: 04-02-2022  by  `-'                        `-'                  */
-/*   Updated: 05-02-2022 21:03 by                                             */
+/*   Updated: 07-02-2022 14:57 by                                             */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,13 +14,13 @@
 
 #include <iostream>
 
-Dog::Dog() : Animal("Dog")
+Dog::Dog() : AAnimal("Dog")
 {
 	this->_brain = new Brain();
 	std::cout << "Dog default constructor called" << std::endl;
 }
 
-Dog::Dog(Dog const &d) : Animal(d.getType())
+Dog::Dog(Dog const &d) : AAnimal(d.getType())
 {
 	this->_brain = new Brain();
 	this->_brain = d._brain; // Copy content

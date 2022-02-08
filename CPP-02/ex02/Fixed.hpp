@@ -6,7 +6,7 @@
 /*   By:             )/   )   )  /  /    (  |   )/   )   ) /   )(   )(    )   */
 /*                  '/   /   (`.'  /      `-'-''/   /   (.'`--'`-`-'  `--':   */
 /*   Created: 30-01-2022  by  `-'                        `-'                  */
-/*   Updated: 31-01-2022 14:00 by                                             */
+/*   Updated: 04-02-2022 16:00 by                                             */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -37,7 +37,10 @@ class Fixed
 
 		static Fixed const	&min(Fixed const &lhs, Fixed const &rhs);
 		static Fixed const	&max(Fixed const &lhs, Fixed const &rhs);
-
+		
+		static Fixed 		&min(Fixed &lhs, Fixed &rhs);
+		static Fixed 		&max(Fixed &lhs, Fixed &rhs);
+	
 		bool	operator<(Fixed const &f) const;
 		bool	operator<=(Fixed const &f) const;
 		bool	operator>(Fixed const &f) const;

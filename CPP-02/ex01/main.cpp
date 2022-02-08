@@ -6,7 +6,7 @@
 /*   By:             )/   )   )  /  /    (  |   )/   )   ) /   )(   )(    )   */
 /*                  '/   /   (`.'  /      `-'-''/   /   (.'`--'`-`-'  `--':   */
 /*   Created: 30-01-2022  by  `-'                        `-'                  */
-/*   Updated: 31-01-2022 11:45 by                                             */
+/*   Updated: 04-02-2022 15:57 by                                             */
 /*                                                                            */
 /* ************************************************************************** */
 #include "Fixed.hpp"
@@ -14,10 +14,12 @@
 
 int main(void) {
 	Fixed a;
-	Fixed const b(1.5f);
+	Fixed const b(10);
 	Fixed const c(42.42f);
 	Fixed const d(b);
+
 	a = Fixed(1234.4321f);
+	
 	std::cout << "a is " << a << std::endl;
 	std::cout << "b is " << b << std::endl;
 	std::cout << "c is " << c << std::endl;
@@ -26,5 +28,4 @@ int main(void) {
 	std::cout << "b is " << b.toInt() << " as integer" << std::endl;
 	std::cout << "c is " << c.toInt() << " as integer" << std::endl;
 	std::cout << "d is " << d.toInt() << " as integer" << std::endl;
-	return 0;
 }

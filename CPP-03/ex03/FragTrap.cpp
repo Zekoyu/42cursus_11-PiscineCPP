@@ -6,7 +6,7 @@
 /*   By:             )/   )   )  /  /    (  |   )/   )   ) /   )(   )(    )   */
 /*                  '/   /   (`.'  /      `-'-''/   /   (.'`--'`-`-'  `--':   */
 /*   Created: 02-02-2022  by  `-'                        `-'                  */
-/*   Updated: 02-02-2022 17:05 by                                             */
+/*   Updated: 07-02-2022 14:17 by                                             */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,7 +18,7 @@ FragTrap::FragTrap() : ClapTrap("FragTrap")
 {
 	this->setHealth(100);
 	this->setEnergy(100);
-	this->setDamage(300);
+	this->setDamage(30);
 
 	std::cout << "FragTrap default constructor called" << std::endl;
 }

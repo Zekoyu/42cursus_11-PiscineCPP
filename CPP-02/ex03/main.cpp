@@ -6,7 +6,7 @@
 /*   By:             )/   )   )  /  /    (  |   )/   )   ) /   )(   )(    )   */
 /*                  '/   /   (`.'  /      `-'-''/   /   (.'`--'`-`-'  `--':   */
 /*   Created: 30-01-2022  by  `-'                        `-'                  */
-/*   Updated: 31-01-2022 16:18 by                                             */
+/*   Updated: 04-02-2022 16:05 by                                             */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,8 +21,9 @@ int main(void) {
 	Point b(28.25, 0.5);
 	Point c(-0.75, 30);
 
-	Point p1(5.5, 2);
-	Point p2(-1.0, 5.25);
+	Point p1(5.5, 2); // inside
+	Point p2(-2.25, 5.25); // outside
+	Point p3(0, 0); // on edge
 
 	std::cout << "A: " << a << ", B: " << b << ", C: " << c << std::endl;
 	
@@ -35,4 +36,9 @@ int main(void) {
 		std::cout << "Point " << p2 << " is in triangle ABC" << std::endl;
 	else
 		std::cout << "Point " << p2 << " is not in triangle ABC" << std::endl;
+
+	if (bsp(a, b, c, p3))
+		std::cout << "Point " << p3 << " is in triangle ABC" << std::endl;
+	else
+		std::cout << "Point " << p3 << " is not in triangle ABC" << std::endl;
 }

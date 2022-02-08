@@ -6,7 +6,7 @@
 /*   By:             )/   )   )  /  /    (  |   )/   )   ) /   )(   )(    )   */
 /*                  '/   /   (`.'  /      `-'-''/   /   (.'`--'`-`-'  `--':   */
 /*   Created: 01-02-2022  by  `-'                        `-'                  */
-/*   Updated: 02-02-2022 17:06 by                                             */
+/*   Updated: 07-02-2022 14:16 by                                             */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,7 +18,7 @@ ScavTrap::ScavTrap() : ClapTrap("ScavTrap")
 {
 	this->setHealth(100);
 	this->setEnergy(50);
-	this->setDamage(100);
+	this->setDamage(20);
 
 	std::cout << "ScavTrap default constructor called" << std::endl;
 }
@@ -27,7 +27,7 @@ ScavTrap::ScavTrap(std::string const &name) : ClapTrap(name)
 {
 	this->setHealth(100);
 	this->setEnergy(50);
-	this->setDamage(100);
+	this->setDamage(20);
 
 	std::cout << "ScavTrap string constructor called" << std::endl;
 }

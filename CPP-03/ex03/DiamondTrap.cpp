@@ -6,7 +6,7 @@
 /*   By:             )/   )   )  /  /    (  |   )/   )   ) /   )(   )(    )   */
 /*                  '/   /   (`.'  /      `-'-''/   /   (.'`--'`-`-'  `--':   */
 /*   Created: 03-02-2022  by  `-'                        `-'                  */
-/*   Updated: 03-02-2022 23:38 by                                             */
+/*   Updated: 07-02-2022 14:11 by                                             */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,8 +16,11 @@
 
 DiamondTrap::DiamondTrap() { std::cout << "DiamondTrap default constructor called" << std::endl; }
 
-DiamondTrap::DiamondTrap(DiamondTrap const &d)/* : Initialize content */
-{(void)d; std::cout << "DiamondTrap copy constructor called" << std::endl; }
+DiamondTrap::DiamondTrap(DiamondTrap const &d) : _name(d.getName())
+{
+	(void)d;
+	std::cout << "DiamondTrap copy constructor called" << std::endl;
+}
 
 DiamondTrap::~DiamondTrap() { std::cout << "DiamondTrap destructor called" << std::endl; }
 
@@ -32,8 +35,7 @@ DiamondTrap::DiamondTrap(std::string const &name)
 
 DiamondTrap	&DiamondTrap::operator=(DiamondTrap const &d)
 {
-	(void) d;
-	/* Copy content */
+	this->_name = d.getName();
 	return (*this);
 }
 

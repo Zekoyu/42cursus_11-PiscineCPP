@@ -6,36 +6,34 @@
 /*   By:             )/   )   )  /  /    (  |   )/   )   ) /   )(   )(    )   */
 /*                  '/   /   (`.'  /      `-'-''/   /   (.'`--'`-`-'  `--':   */
 /*   Created: 04-02-2022  by  `-'                        `-'                  */
-/*   Updated: 05-02-2022 21:12 by                                             */
+/*   Updated: 07-02-2022 14:56 by                                             */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "Animal.hpp"
+#ifndef AANIMAL_HPP
+# define AANIMAL_HPP
 
 #include <iostream>
 
-Animal::Animal() : _type("Unknown")
-{ std::cout << "Animal default constructor called" << std::endl; }
-
-Animal::Animal(Animal const &a) : _type(a.getType())
-{ std::cout << "Animal copy constructor called" << std::endl; }
-
-Animal::Animal(std::string const &type) : _type(type)
-{ std::cout << "Animal string parameter constructor called" << std::endl; }
-
-Animal::~Animal() { std::cout << "Animal destructor called" << std::endl; }
-
-Animal	&Animal::operator=(Animal const &a)
+class AAnimal
 {
-	this->_type = a.getType();
-	return (*this);
-}
+	private:
+		
+	protected:
+		std::string	_type;
+	public:
+		AAnimal();
+		AAnimal(AAnimal const &a);
+		AAnimal(std::string const &type);
+		virtual ~AAnimal();
 
-std::ostream	&operator<<(std::ostream &os, Animal const &a)
+		AAnimal	&operator=(AAnimal const &a);
 
-{
-	os << "I am an animal and my type is " << a.getType();
-	return (os);
-}
+		// =0 make function pure virtual (abstract), = 0 means smth like "Non present", to avoid introducing new keyword
+		virtual void		makeSound(void) const = 0;
+		std::string			getType(void) const;
+};
 
-std::string	Animal::getType(void) const { return (this->_type); }
+std::ostream	&operator<<(std::ostream &os, AAnimal const &a);
+
+#endif

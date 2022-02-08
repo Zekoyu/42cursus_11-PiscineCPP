@@ -6,7 +6,7 @@
 /*   By:             )/   )   )  /  /    (  |   )/   )   ) /   )(   )(    )   */
 /*                  '/   /   (`.'  /      `-'-''/   /   (.'`--'`-`-'  `--':   */
 /*   Created: 30-01-2022  by  `-'                        `-'                  */
-/*   Updated: 31-01-2022 14:16 by                                             */
+/*   Updated: 04-02-2022 16:01 by                                             */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -60,6 +60,20 @@ Fixed const	&Fixed::max(Fixed const &lhs, Fixed const &rhs)
 }
 
 Fixed const	&Fixed::min(Fixed const &lhs, Fixed const &rhs)
+{
+	if(lhs < rhs)
+		return (lhs);
+	return (rhs);
+}
+
+Fixed 		&Fixed::max(Fixed &lhs, Fixed &rhs)
+{
+	if(lhs > rhs)
+		return (lhs);
+	return (rhs);
+}
+
+Fixed		 &Fixed::min(Fixed &lhs, Fixed &rhs)
 {
 	if(lhs < rhs)
 		return (lhs);

@@ -1,4 +1,4 @@
-SRCS = Animal.cpp Dog.cpp Cat.cpp main.cpp Brain.cpp
+SRCS = AAnimal.cpp Dog.cpp Cat.cpp main.cpp Brain.cpp
 
 NAME = animal
 

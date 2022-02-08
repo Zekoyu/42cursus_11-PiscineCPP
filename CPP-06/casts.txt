@@ -1,0 +1,14 @@
+- Static cast = "classic" cast which reinterprets, but is checked at compile time (if wrong conversion, it will not compile)
+
+- Reinterpret cast = take an object, and just read it as another one, no CPU instructions needed (used for uint_ptr to ptr for instance)
+
+-Const cast converts from const to non-const and vice versa, can be used if a function is const (eg. in parent), 
+but need to modify code (eg. in child), or just to modify const value, though it's an undefined behavior
+
+- Dynamic cast check the type at runtime (as opposed to static cast which does at compile time), can be used
+if we don't know the type, for instance we have a class either of type B or C, which both inherit type A, if 
+we don't know if it's B or C, we can use dynamic_cast<A>(var) to convert automatically from C to A or B to A depending on the type
+
+C-style cast try all 4 casts until one work, should be avoided in C++
+
+https://www.linkedin.com/pulse/c-typecasting-from-developers-point-view-vishal-chovatiya

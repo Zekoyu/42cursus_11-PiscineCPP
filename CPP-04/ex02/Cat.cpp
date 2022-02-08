@@ -6,7 +6,7 @@
 /*   By:             )/   )   )  /  /    (  |   )/   )   ) /   )(   )(    )   */
 /*                  '/   /   (`.'  /      `-'-''/   /   (.'`--'`-`-'  `--':   */
 /*   Created: 04-02-2022  by  `-'                        `-'                  */
-/*   Updated: 05-02-2022 21:03 by                                             */
+/*   Updated: 07-02-2022 14:57 by                                             */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,13 +14,13 @@
 
 #include <iostream>
 
-Cat::Cat() : Animal("Cat")
+Cat::Cat() : AAnimal("Cat")
 {
 	this->_brain = new Brain();
 	std::cout << "Cat default constructor called" << std::endl;
 }
 
-Cat::Cat(Cat const &d) : Animal(d.getType())
+Cat::Cat(Cat const &d) : AAnimal(d.getType())
 {
 	this->_brain = new Brain();
 	std::cout << "Cat copy constructor called" << std::endl;

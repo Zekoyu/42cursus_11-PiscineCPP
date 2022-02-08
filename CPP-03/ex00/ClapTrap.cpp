@@ -6,7 +6,7 @@
 /*   By:             )/   )   )  /  /    (  |   )/   )   ) /   )(   )(    )   */
 /*                  '/   /   (`.'  /      `-'-''/   /   (.'`--'`-`-'  `--':   */
 /*   Created: 31-01-2022  by  `-'                        `-'                  */
-/*   Updated: 31-01-2022 22:54 by                                             */
+/*   Updated: 07-02-2022 14:39 by                                             */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -76,7 +76,7 @@ void	ClapTrap::beRepaired(unsigned int amount)
 {
 	if (this->_energyPoints >= 1)
 	{
-		std::cout << "ClapTrap gained " << amount << " health, he now has " << this->getHealth() << " HP and " << this->getEnergy() << " energy." << std::endl;
+		std::cout << "ClapTrap gained " << amount << " health, he now have " << this->getHealth() + amount << " HP and " << this->getEnergy() - 1 << " energy." << std::endl;
 		this->_hitPoints += amount;
 		this->_energyPoints--;
 	}
