@@ -6,31 +6,19 @@
 /*   By:             )/   )   )  /  /    (  |   )/   )   ) /   )(   )(    )   */
 /*                  '/   /   (`.'  /      `-'-''/   /   (.'`--'`-`-'  `--':   */
 /*   Created: 09-02-2022  by  `-'                        `-'                  */
-/*   Updated: 09-02-2022 14:59 by                                             */
+/*   Updated: 09-02-2022 18:15 by                                             */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef DATA_HPP
-# define DATA_HPP
+#ifndef BASE_HPP
+# define BASE_HPP
 
 #include <iostream>
 
-class Data
+class Base
 {
-	private:
-		
 	public:
-		int const	someData;
-		int const	someOtherData;
-
-		Data();
-		Data(Data const &d);
-		~Data();
-
-		Data	&operator=(Data const &d);
-
+		virtual ~Base() {}; // Need to define empty constructor with {}, otherwise 'undefined reference to typeinfo'
 };
-
-std::ostream	&operator<<(std::ostream &os, Data const &d);
 
 #endif

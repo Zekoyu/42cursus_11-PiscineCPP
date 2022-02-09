@@ -6,18 +6,32 @@
 /*   By:             )/   )   )  /  /    (  |   )/   )   ) /   )(   )(    )   */
 /*                  '/   /   (`.'  /      `-'-''/   /   (.'`--'`-`-'  `--':   */
 /*   Created: 09-02-2022  by  `-'                        `-'                  */
-/*   Updated: 09-02-2022 15:08 by                                             */
+/*   Updated: 09-02-2022 18:04 by                                             */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "Data.hpp"
 #include <stdlib.h>
+#include <iostream>
+#include <stdint.h>
+
+struct Data // struct = default public, class = default private
+{
+	int	someData;
+	int	someOtherData;
+};
+
+std::ostream	&operator<<(std::ostream &os, Data const &d)
+
+{
+	std::cout << "Some data: " << d.someData << ", some other data: " << d.someOtherData;
+	return (os);
+}
 
 // just read the memory as uintptr now
 uintptr_t	serialize(Data *ptr) { return (reinterpret_cast<uintptr_t>(ptr)); }
 
 // then read it back as Data *
-Data		*deserialize(uintptr_t ptr) { return (reinterpret_cast<Data *>(ptr)); }
+Data		*deserialize(uintptr_t ptr) { return (reinterpret_cast<Data*>(ptr)); }
 
 
 int main()
@@ -25,6 +39,9 @@ int main()
 	srand(time(NULL)); // initialize random seed
 
 	Data 		*d = new Data();
+
+	d->someData = rand() % 100;
+	d->someOtherData = 42;
 	
 	uintptr_t	p = serialize(d);
 	

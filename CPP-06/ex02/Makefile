@@ -1,6 +1,6 @@
 SRCS = main.cpp
 
-NAME = reinterpret
+NAME = dynamic
 
 OBJS = $(SRCS:.cpp=.o)
 
