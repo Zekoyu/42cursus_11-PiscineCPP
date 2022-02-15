@@ -6,7 +6,7 @@
 /*   By:             )/   )   )  /  /    (  |   )/   )   ) /   )(   )(    )   */
 /*                  '/   /   (`.'  /      `-'-''/   /   (.'`--'`-`-'  `--':   */
 /*   Created: 09-02-2022  by  `-'                        `-'                  */
-/*   Updated: 09-02-2022 18:31 by                                             */
+/*   Updated: 11-02-2022 11:36 by                                             */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -55,7 +55,7 @@ void	identify(Base &p)
 		std::cout << "A" << std::endl;
 		return ;
 	}
-	catch (std::exception e)	{ } // If catch, go to next test, could use std::bad_cast but need to include typeinfo
+	catch (std::exception &e)	{ } // If catch, go to next test, could use std::bad_cast but need to include typeinfo
 	
 	try
 	{
@@ -63,7 +63,7 @@ void	identify(Base &p)
 		std::cout << "B" << std::endl;
 		return ;
 	}
-	catch (std::exception e)	{ }
+	catch (std::exception &e)	{ }
 
 	try
 	{
@@ -71,7 +71,7 @@ void	identify(Base &p)
 		std::cout << "C" << std::endl;
 		return ;
 	}
-	catch (std::exception e)
+	catch (std::exception &e)
 	{
 		std::cout << "Couldn't identify type, you should never see this message." << std::endl;
 	}
@@ -84,7 +84,10 @@ int main()
 	Base *b = generate();
 	identify(b);
 
-	srand(time(NULL) + 2);
+	srand(time(NULL) + 2.8);
 	Base *c = generate();
 	identify(*c);
+
+	delete b;
+	delete c;
 }

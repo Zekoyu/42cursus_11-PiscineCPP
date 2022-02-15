@@ -6,7 +6,7 @@
 /*   By:             )/   )   )  /  /    (  |   )/   )   ) /   )(   )(    )   */
 /*                  '/   /   (`.'  /      `-'-''/   /   (.'`--'`-`-'  `--':   */
 /*   Created: 09-02-2022  by  `-'                        `-'                  */
-/*   Updated: 09-02-2022 18:04 by                                             */
+/*   Updated: 11-02-2022 11:29 by                                             */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -31,7 +31,7 @@ std::ostream	&operator<<(std::ostream &os, Data const &d)
 uintptr_t	serialize(Data *ptr) { return (reinterpret_cast<uintptr_t>(ptr)); }
 
 // then read it back as Data *
-Data		*deserialize(uintptr_t ptr) { return (reinterpret_cast<Data*>(ptr)); }
+Data		*deserialize(uintptr_t raw) { return (reinterpret_cast<Data*>(raw)); }
 
 
 int main()

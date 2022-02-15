@@ -6,7 +6,7 @@
 /*   By:             )/   )   )  /  /    (  |   )/   )   ) /   )(   )(    )   */
 /*                  '/   /   (`.'  /      `-'-''/   /   (.'`--'`-`-'  `--':   */
 /*   Created: 09-02-2022  by  `-'                        `-'                  */
-/*   Updated: 09-02-2022 18:15 by                                             */
+/*   Updated: 11-02-2022 11:31 by                                             */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,7 +18,7 @@
 class Base
 {
 	public:
-		virtual ~Base() {}; // Need to define empty constructor with {}, otherwise 'undefined reference to typeinfo'
+		virtual ~Base() {}; // Need to implement empty constructor with {}, otherwise 'undefined reference to typeinfo'
 };
 
 #endif

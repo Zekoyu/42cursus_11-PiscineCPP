@@ -6,7 +6,7 @@
 /*   By:             )/   )   )  /  /    (  |   )/   )   ) /   )(   )(    )   */
 /*                  '/   /   (`.'  /      `-'-''/   /   (.'`--'`-`-'  `--':   */
 /*   Created: 09-02-2022  by  `-'                        `-'                  */
-/*   Updated: 09-02-2022 14:43 by                                             */
+/*   Updated: 11-02-2022 11:36 by                                             */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,7 +20,7 @@ void	printAsChar(double num)
 
 	std::cout << "char: ";
 	if (i < 0 || i > 127)
-		std::cout << "Impossible" << std::endl;
+		std::cout << "impossible" << std::endl;
 	else if (!std::isprint(i))
 		std::cout << "Non displayable" << std::endl;
 	else
@@ -36,7 +36,7 @@ void	printAsInt(double num)
 
 	std::cout << "int: ";
 	if (std::isnan(num) || std::isinf(num))
-		std::cout << "Impossible" << std::endl;
+		std::cout << "impossible" << std::endl;
 	else
 		std::cout << i << std::endl;
 }
@@ -70,12 +70,12 @@ int main(int argc, char **argv)
 	{
 		num = std::stod(argv[1], NULL);
 	}
-	catch (std::invalid_argument e)
+	catch (std::invalid_argument &e)
 	{
 		std::cerr << "Please enter a valid argument" << std::endl;
 		return (EXIT_FAILURE);
 	}
-	catch (std::exception e)
+	catch (std::exception &e)
 	{
 		std::cerr << "An error occured: " << e.what() << std::endl;
 		return (EXIT_FAILURE);

@@ -6,7 +6,7 @@
 /*   By:             )/   )   )  /  /    (  |   )/   )   ) /   )(   )(    )   */
 /*                  '/   /   (`.'  /      `-'-''/   /   (.'`--'`-`-'  `--':   */
 /*   Created: 11-02-2022  by  `-'                        `-'                  */
-/*   Updated: 11-02-2022 20:02 by                                             */
+/*   Updated: 15-02-2022 11:55 by                                             */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -32,6 +32,8 @@ int main(int, char**)
         Array<int> tmp = numbers;
         Array<int> test(tmp);
     }
+
+    std::cout << "Array size: " << numbers.size() << std::endl;
 
     for (int i = 0; i < MAX_VAL; i++)
     {
