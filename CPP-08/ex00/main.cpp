@@ -6,7 +6,7 @@
 /*   By:             )/   )   )  /  /    (  |   )/   )   ) /   )(   )(    )   */
 /*                  '/   /   (`.'  /      `-'-''/   /   (.'`--'`-`-'  `--':   */
 /*   Created: 15-02-2022  by  `-'                        `-'                  */
-/*   Updated: 15-02-2022 15:03 by                                             */
+/*   Updated: 16-02-2022 13:44 by                                             */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,7 +24,7 @@ int main()
 	try
 	{
 		easyfind(values2, 42);
-		std::cout << "Found value" << std::endl;
+		std::cout << "Found value 42" << std::endl;
 	}
 	catch (std::exception &e)
 	{
@@ -34,7 +34,7 @@ int main()
 	try
 	{
 		easyfind(values2, 41);
-		std::cout << "Found value" << std::endl;
+		std::cout << "Found value 41" << std::endl;
 	}
 	catch (std::exception &e)
 	{
@@ -46,7 +46,7 @@ int main()
 	try
 	{
 		easyfind(values, 42);
-		std::cout << "Found value" << std::endl;
+		std::cout << "Found value 42" << std::endl;
 	}
 	catch (std::exception &e)
 	{
@@ -56,7 +56,7 @@ int main()
 	try
 	{
 		easyfind(values, 41);
-		std::cout << "Found value" << std::endl;
+		std::cout << "Found value 41" << std::endl;
 	}
 	catch (std::exception &e)
 	{
